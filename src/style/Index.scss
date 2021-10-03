@@ -1,0 +1,14 @@
+@import '../Variables/Variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $body-bg;
+  color: $color;
+  font-size: 62.5%;
+  font-family: 'Rubik', sans-serif;
+}

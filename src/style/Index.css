@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #0f1424;
+  color: #fff;
+  font-size: 62.5%;
+  font-family: 'Rubik', sans-serif;
+}
+/*# sourceMappingURL=index.css.map */
