@@ -1,0 +1,116 @@
+@import '../styles/variables.scss';
+
+.card {
+  height: 200px;
+  margin-top: -2rem;
+  position: relative;
+  background-color: $dark-blue-card;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $desaturated-blue;
+  }
+
+  &__cards {
+    padding: 2rem 3rem 0 2rem;
+    color: $color;
+    font-size: 1rem;
+
+    &__flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    &__hrs {
+      font-size: 3rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    &__lastWeek {
+      font-size: 0.8rem;
+      font-weight: 300;
+    }
+
+    &__dots {
+      height: 5px;
+      cursor: pointer;
+    }
+  }
+
+  &__work {
+    background-color: $light-red-work;
+    border-radius: 11px;
+    align-self: end;
+
+    &__img {
+      width: 65px;
+      height: 65px;
+      margin-left: 8rem;
+    }
+  }
+
+  &__play {
+    background-color: $soft-blue-play;
+    border-radius: 11px;
+    align-self: end;
+
+    &__img {
+      width: 65px;
+      height: 65px;
+      margin-left: 8rem;
+    }
+  }
+  &__study {
+    background-color: $light-red-study;
+    border-radius: 11px;
+    align-self: end;
+
+    &__img {
+      width: 65px;
+      height: 65px;
+      margin-left: 8rem;
+    }
+  }
+  &__exercise {
+    background-color: $lime-green-exercise;
+    border-radius: 11px;
+    align-self: end;
+
+    &__img {
+      width: 65px;
+      height: 65px;
+      margin-left: 8rem;
+    }
+  }
+  &__social {
+    background-color: $violet-social;
+    border-radius: 11px;
+    align-self: end;
+
+    &__img {
+      width: 65px;
+      height: 65px;
+      margin-left: 8rem;
+    }
+  }
+  &__selfcare {
+    background-color: $soft-orange-self-care;
+    border-radius: 11px;
+    align-self: end;
+
+    &__img {
+      width: 65px;
+      height: 65px;
+      margin-left: 8rem;
+    }
+  }
+}

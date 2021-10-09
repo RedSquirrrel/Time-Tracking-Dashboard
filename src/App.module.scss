@@ -1,0 +1,55 @@
+@import './styles/variables.scss';
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  &__grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  &__grid__3__cols {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  &__card__container {
+    max-width: 138rem;
+    height: 550px;
+
+    &__user {
+      grid-column: 1/ 2;
+      grid-row: 1/-1;
+      background-color: $dark-blue-card;
+
+      &__div {
+        background-color: $pale-blue;
+        height: 200px;
+        margin-bottom: 2rem;
+      }
+
+      img {
+        height: 100px;
+        width: 100px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-content: flex-start;
+
+      &__btn {
+        font-size: 1rem;
+      }
+    }
+  }
+}

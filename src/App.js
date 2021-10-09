@@ -1,6 +1,14 @@
+import classes from './App.module.scss';
+import styles from './components/Card.module.scss';
 import { useState } from 'react';
 import Card from './components/Card';
-import './style/Index.css';
+import image from './images/image-jeremy.png';
+import workImage from './images/icon-work.svg';
+import playImage from './images/icon-play.svg';
+import studyImage from './images/icon-study.svg';
+import exerciseImage from './images/icon-exercise.svg';
+import socialImage from './images/icon-social.svg';
+import selfCareImage from './images/icon-self-care.svg';
 import jsonData from './data.json';
 const loadData = [...jsonData];
 console.log(loadData);
@@ -9,15 +17,97 @@ const App = () => {
   const [info, setInfo] = useState(loadData);
   console.log(info);
 
-  return (
-    <div>
-      {info.map(i => {
+  const renderCardContent = () => {
+    return info.map(i => {
+      if (i.title === 'Work') {
         return (
-          <div key={i.title}>
-            <Card info={i.title} />
+          <div className={styles.card__work} key={i.title}>
+            <img className={styles.card__work__img} src={workImage} alt='' />
+            <Card
+              title={i.title}
+              timeframesCurrent={i.timeframes.weekly.current}
+              timeframesPrev={i.timeframes.weekly.previous}
+            />
           </div>
         );
-      })}
+      } else if (i.title === 'Play') {
+        return (
+          <div className={styles.card__play} key={i.title}>
+            <img className={styles.card__play__img} src={playImage} alt='' />
+            <Card
+              title={i.title}
+              timeframesCurrent={i.timeframes.weekly.current}
+              timeframesPrev={i.timeframes.weekly.previous}
+            />
+          </div>
+        );
+      } else if (i.title === 'Study') {
+        return (
+          <div className={styles.card__study} key={i.title}>
+            <img className={styles.card__study__img} src={studyImage} alt='' />
+            <Card
+              title={i.title}
+              timeframesCurrent={i.timeframes.weekly.current}
+              timeframesPrev={i.timeframes.weekly.previous}
+            />
+          </div>
+        );
+      } else if (i.title === 'Exercise') {
+        return (
+          <div className={styles.card__exercise} key={i.title}>
+            <img className={styles.card__exercise__img} src={exerciseImage} alt='' />
+            <Card
+              title={i.title}
+              timeframesCurrent={i.timeframes.weekly.current}
+              timeframesPrev={i.timeframes.weekly.previous}
+            />
+          </div>
+        );
+      } else if (i.title === 'Social') {
+        return (
+          <div className={styles.card__social} key={i.title}>
+            <img className={styles.card__social__img} src={socialImage} alt='' />
+            <Card
+              title={i.title}
+              timeframesCurrent={i.timeframes.weekly.current}
+              timeframesPrev={i.timeframes.weekly.previous}
+            />
+          </div>
+        );
+      } else if (i.title === 'Self Care') {
+        return (
+          <div className={styles.card__selfcare} key={i.title}>
+            <img className={styles.card__selfcare__img} src={selfCareImage} alt='' />
+            <Card
+              title={i.title}
+              timeframesCurrent={i.timeframes.weekly.current}
+              timeframesPrev={i.timeframes.weekly.previous}
+            />
+          </div>
+        );
+      }
+    });
+  };
+
+  return (
+    <div className={`${classes.container} `}>
+      <div
+        className={`${classes.container__grid} ${classes.container__grid__3__cols} ${classes.container__card__container}`}
+      >
+        <div className={classes.container__card__container__user}>
+          <div className={classes.container__card__container__user_div}>
+            <img src={image} alt='user' />
+            <p>Report for</p>
+            <h4>Jeremy Robson</h4>
+          </div>
+          <div className={classes.container__card__container__buttons}>
+            <button className={classes.container__card__container__buttons__btn}>Daily</button>
+            <button className={classes.container__card__container__buttons__btn}>Weekly</button>
+            <button className={classes.container__card__container__buttons__btn}>Monthly</button>
+          </div>
+        </div>
+        {renderCardContent()}
+      </div>
     </div>
   );
 };
