@@ -95,7 +95,7 @@ const App = () => {
         className={`${classes.container__grid} ${classes.container__grid__3__cols} ${classes.container__card__container}`}
       >
         <div className={classes.container__card__container__user}>
-          <div className={classes.container__card__container__user_div}>
+          <div className={classes.container__card__container__user__div}>
             <img src={image} alt='user' />
             <p>Report for</p>
             <h4>Jeremy Robson</h4>
