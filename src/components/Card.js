@@ -2,7 +2,6 @@ import classes from './Card.module.scss';
 import dotsImage from '../images/icon-ellipsis.svg';
 
 const Card = ({ title, timeframesCurrent, timeframesPrev }) => {
-  console.log(title);
   return (
     <div className={`${classes.card} `}>
       <div>
