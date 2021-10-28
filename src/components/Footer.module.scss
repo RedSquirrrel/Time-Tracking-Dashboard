@@ -1,0 +1,50 @@
+@import '../styles/variables.scss';
+
+.footer {
+  font-size: 0.8rem;
+  vertical-align: top;
+  // writing-mode: vertical-lr;
+  // text-orientation: upright;
+  position: fixed;
+  transform: rotate(321deg);
+  top: 50rem;
+  margin: 0 auto;
+  left: 77rem;
+  margin-bottom: -50rem;
+  z-index: 10;
+  background: linear-gradient(180deg, #{$soft-blue-play} 0%, #{$violet-social} 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+
+  // breackpoint
+  // left: 105rem;
+
+  a {
+    text-align: center;
+    color: $light-red-study;
+    text-decoration: none;
+    animation: rainbow 10s infinite;
+    transition: all 0.2s;
+  }
+
+  @keyframes rainbow {
+    0% {
+      color: $light-red-work;
+    }
+    16% {
+      color: $soft-blue-play;
+    }
+    33% {
+      color: $light-red-study;
+    }
+    66% {
+      color: $lime-green-exercise;
+    }
+    82% {
+      color: $violet-social;
+    }
+    100% {
+      color: $soft-orange-self-care;
+    }
+  }
+}
