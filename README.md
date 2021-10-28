@@ -26,14 +26,12 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Switch between viewing Daily, Weekly, and Monthly stats
 
-### Screenshot
-
 ![](./cover.png)
 
 ### Links
 
 - [Solution](https://github.com/RedSquirrrel/Time-Tracking-Dashboard)
-- [Live Site](https://your-live-site-url.com)
+- [Live Site](https://time-tracking-anette.netlify.app/)
 
 ## My process
 
