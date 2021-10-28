@@ -10,8 +10,10 @@ const Card = ({ title, timeframesCurrent, timeframesPrev }) => {
             <p className={classes.card__cards__title}>{title}</p>
             <img className={classes.card__cards__dots} src={dotsImage} alt='three dots' />
           </div>
-          <p className={classes.card__cards__hrs}>{timeframesCurrent}hrs</p>
-          <p className={classes.card__cards__lastWeek}>Last week - {timeframesPrev}hrs</p>
+          <div className={classes.card__cards__flexP}>
+            <p className={classes.card__cards__hrs}>{timeframesCurrent}hrs</p>
+            <p className={classes.card__cards__lastWeek}>Last week - {timeframesPrev}hrs</p>
+          </div>
         </div>
       </div>
     </div>

@@ -3,6 +3,14 @@
 .main {
   position: relative;
 
+  @include breakpoint(smallPhones) {
+    padding: 1rem 2rem 0.8rem 2rem;
+  }
+
+  @include breakpoint(tablets) {
+    padding: 1rem 2rem 0.8rem 2rem;
+  }
+
   .container {
     margin: 0 auto;
     max-width: 61.8rem;
@@ -13,8 +21,10 @@
     min-height: 100vh;
     padding-bottom: 1.3rem;
 
-    // padding for breackpoint
-    // padding: 1rem 0.8rem 0.8rem 0.8rem;
+    @include breakpoint(smallPhones) {
+      padding: 1rem 2rem 0.8rem 2rem;
+      margin-bottom: 10rem;
+    }
 
     &__grid {
       display: grid;
@@ -40,6 +50,12 @@
           border-bottom-left-radius: 20px;
           border-bottom-right-radius: 20px;
           padding: 1.9rem;
+
+          @include breakpoint(smallPhones) {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+          }
         }
 
         img {
@@ -49,26 +65,43 @@
           border-radius: 50%;
           margin-bottom: 2rem;
           margin-top: 0.5rem;
+
+          @include breakpoint(smallPhones) {
+            margin-bottom: 0;
+          }
         }
 
         p {
           font-weight: 300;
           font-size: 0.8rem;
           margin-bottom: 0.4rem;
+
+          @include breakpoint(smallPhones) {
+            margin-bottom: 0.5rem;
+          }
         }
 
         h4 {
           font-size: 2.2rem;
           font-weight: 300;
+
+          @include breakpoint(smallPhones) {
+            font-size: 1.3rem;
+          }
         }
       }
 
       &__buttons {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
         justify-content: space-evenly;
         align-content: flex-start;
+
+        @include breakpoint(smallPhones) {
+          flex-direction: row;
+          padding-bottom: 5rem;
+          margin-left: 0;
+        }
 
         &__active {
           background: transparent;
@@ -78,6 +111,10 @@
           align-self: flex-start;
           cursor: pointer;
           color: #fff;
+
+          @include breakpoint(smallPhones) {
+            padding: 0.1rem;
+          }
         }
 
         &__btn {
@@ -88,6 +125,10 @@
           align-self: flex-start;
           cursor: pointer;
           color: rgba(255, 255, 255, 0.541);
+
+          @include breakpoint(smallPhones) {
+            padding: 0.1rem;
+          }
 
           &:hover {
             color: $color;

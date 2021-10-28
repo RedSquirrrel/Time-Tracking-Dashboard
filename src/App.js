@@ -41,8 +41,10 @@ const App = () => {
           <div className={classes.container__card__container__user}>
             <div className={classes.container__card__container__user__div}>
               <img src={image} alt='user' />
-              <p>Report for</p>
-              <h4>Jeremy Robson</h4>
+              <div>
+                <p>Report for</p>
+                <h4>Jeremy Robson</h4>
+              </div>
             </div>
             <div className={classes.container__card__container__buttons}>
               <button

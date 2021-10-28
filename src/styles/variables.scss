@@ -13,3 +13,40 @@ $transparent-bottom: rgba(252, 252, 252, 0);
 $dark-blue-card: hsl(235, 46%, 20%);
 $desaturated-blue: hsl(236, 41%, 34%);
 $pale-blue: hsl(246, 80%, 60%);
+
+@mixin breakpoint($point) {
+  @if $point == smallPhones {
+    // below 544px
+    @media (max-width: 34em) {
+      @content;
+    }
+  }
+
+  @if $point == tablets {
+    // below 944px
+    @media (max-width: 59em) {
+      @content;
+    }
+  }
+
+  @if $point == landscape {
+    // below 1200px
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $point == lg {
+    // above 1440px
+    @media (min-width: 90em) {
+      @content;
+    }
+  }
+
+  @if $point == xlg {
+    // above 1664px
+    @media (min-width: 104em) {
+      @content;
+    }
+  }
+}
