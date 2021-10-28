@@ -1,7 +1,7 @@
 @import '../styles/variables.scss';
 
 .card {
-  margin-top: -2rem;
+  margin-top: -2.1rem;
   position: relative;
   background-color: $dark-blue-card;
   border-radius: 10px;
@@ -12,125 +12,134 @@
   }
 
   &__cards {
-    padding: 2rem 3rem 0 2rem;
+    padding: 0.9rem 2rem 0.1rem 1.9rem;
 
     &__flex {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     &__title {
       font-size: 1rem;
       font-weight: 500;
+      margin-bottom: 0.1rem;
+      margin-top: 0.8rem;
     }
 
     &__hrs {
       font-size: 3rem;
       font-weight: 300;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     &__lastWeek {
       font-size: 0.8rem;
       font-weight: 300;
-      padding-bottom: 1rem;
+      padding-bottom: 1.6rem;
     }
 
     &__dots {
-      height: 5px;
+      height: 4px;
       cursor: pointer;
+      align-self: center;
+      margin-top: 0.8rem;
     }
   }
 
   &__work {
-    background-color: $light-red-work;
+    background: linear-gradient(180deg, #{$light-red-work} 69.9%, #{$transparent-bottom} 70%);
     border-radius: 11px;
     align-self: end;
-    padding-top: 0.5rem;
+    padding-top: 0.3rem;
     overflow: hidden;
 
     &__img {
-      width: 65px;
-      height: 65px;
-      margin-left: 10.5rem;
+      width: 70px;
+      height: 70px;
+      margin-left: 9rem;
       position: relative;
       top: -0.8rem;
     }
   }
 
   &__play {
-    background-color: $soft-blue-play;
+    background: linear-gradient(180deg, #{$soft-blue-play} 69.9%, #{$transparent-bottom} 70%);
     border-radius: 11px;
     align-self: end;
-    padding-top: 0.5rem;
+    padding-top: 0.3rem;
     overflow: hidden;
 
     &__img {
-      width: 65px;
-      height: 65px;
-      margin-left: 10.5rem;
+      width: 70px;
+      height: 70px;
+      margin-left: 9rem;
       position: relative;
       top: -0.8rem;
     }
   }
   &__study {
-    background-color: $light-red-study;
+    background: linear-gradient(180deg, #{$light-red-study} 69.9%, #{$transparent-bottom} 70%);
     border-radius: 11px;
     align-self: end;
-    padding-top: 0.5rem;
+    padding-top: 0.3rem;
     overflow: hidden;
 
     &__img {
-      width: 65px;
-      height: 65px;
-      margin-left: 10.5rem;
+      width: 70px;
+      height: 70px;
+      margin-left: 9rem;
       position: relative;
       top: -0.8rem;
     }
   }
   &__exercise {
-    background-color: $lime-green-exercise;
+    background: linear-gradient(180deg, #{$lime-green-exercise} 69.9%, #{$transparent-bottom} 70%);
     border-radius: 11px;
     align-self: end;
-    padding-top: 0.5rem;
+    padding-top: 0.3rem;
     overflow: hidden;
 
     &__img {
-      width: 65px;
-      height: 65px;
-      margin-left: 10.5rem;
+      width: 70px;
+      height: 70px;
+      margin-left: 9rem;
       position: relative;
       top: -0.8rem;
     }
   }
   &__social {
-    background-color: $violet-social;
+    background: linear-gradient(180deg, #{$violet-social} 69.9%, #{$transparent-bottom} 70%);
     border-radius: 11px;
     align-self: end;
-    padding-top: 0.5rem;
+    padding-top: 0.3rem;
     overflow: hidden;
 
     &__img {
-      width: 65px;
-      height: 65px;
-      margin-left: 10.5rem;
+      width: 70px;
+      height: 70px;
+      margin-left: 9rem;
       position: relative;
       top: -0.8rem;
     }
   }
   &__selfcare {
-    background-color: $soft-orange-self-care;
+    background: linear-gradient(
+      180deg,
+      #{$soft-orange-self-care} 69.9%,
+      #{$transparent-bottom} 70%
+    );
+
     border-radius: 11px;
     align-self: end;
-    padding-top: 0.5rem;
+    padding-top: 0.3rem;
     overflow: hidden;
 
     &__img {
-      width: 65px;
-      height: 65px;
-      margin-left: 10.5rem;
+      width: 70px;
+      height: 70px;
+      margin-left: 9rem;
       position: relative;
       top: -0.8rem;
     }

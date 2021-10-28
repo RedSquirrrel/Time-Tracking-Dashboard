@@ -11,22 +11,22 @@ const App = () => {
   const [daily, setDaily] = useState([]);
   const [weekly, setWeekly] = useState([]);
   const [monthly, setMothly] = useState([]);
-  const [selectedDashboard, setSelectedDashboard] = useState('WEEKLY');
+  const [selectedDashboard, setSelectedDashboard] = useState('weekly');
 
   useEffect(() => {
     setInfo(jsonData.data);
   }, [info]);
 
   const handleDaily = e => {
-    setSelectedDashboard('DAILY');
+    setSelectedDashboard(e.target.id);
     setDaily(e.target.value);
   };
   const handleMonthly = e => {
-    setSelectedDashboard('MONTHLY');
+    setSelectedDashboard(e.target.id);
     setMothly(e.target.value);
   };
   const handleWeekly = e => {
-    setSelectedDashboard('WEEKLY');
+    setSelectedDashboard(e.target.id);
     setWeekly(e.target.value);
   };
 
@@ -43,29 +43,43 @@ const App = () => {
           </div>
           <div className={classes.container__card__container__buttons}>
             <button
-              className={classes.container__card__container__buttons__btn}
+              id='daily'
+              className={
+                selectedDashboard === 'daily'
+                  ? `${classes.container__card__container__buttons__active}`
+                  : `${classes.container__card__container__buttons__btn}`
+              }
               onClick={handleDaily}
             >
               Daily
             </button>
             <button
-              style={{ color: 'white' }}
-              className={classes.container__card__container__buttons__btn}
+              id='weekly'
+              className={
+                selectedDashboard === 'weekly'
+                  ? `${classes.container__card__container__buttons__active}`
+                  : `${classes.container__card__container__buttons__btn}`
+              }
               onClick={handleWeekly}
             >
               Weekly
             </button>
             <button
-              className={classes.container__card__container__buttons__btn}
+              id='monthly'
+              className={
+                selectedDashboard === 'monthly'
+                  ? `${classes.container__card__container__buttons__active}`
+                  : `${classes.container__card__container__buttons__btn}`
+              }
               onClick={handleMonthly}
             >
               Monthly
             </button>
           </div>
         </div>
-        {selectedDashboard === 'WEEKLY' && <Weekly info={info} weekly={weekly} />}
-        {selectedDashboard === 'DAILY' && <Daily info={info} daily={daily} />}
-        {selectedDashboard === 'MONTHLY' && <Monthly info={info} monthly={monthly} />}
+        {selectedDashboard === 'weekly' && <Weekly info={info} weekly={weekly} />}
+        {selectedDashboard === 'daily' && <Daily info={info} daily={daily} />}
+        {selectedDashboard === 'monthly' && <Monthly info={info} monthly={monthly} />}
       </div>
     </div>
   );
