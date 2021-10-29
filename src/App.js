@@ -1,34 +1,22 @@
 import classes from './App.module.scss';
 import { useState, useEffect } from 'react';
-import Weekly from './components/Weekly';
-import Daily from './components/Daily';
-import Monthly from './components/Monthly';
+import CardContainer from './components/CardContainer';
 import Footer from './components/Footer';
 import image from './images/image-jeremy.png';
 import jsonData from './data.json';
 
 const App = () => {
+  const timeFrames = ['daily', 'weekly', 'monthly'];
+
   const [info, setInfo] = useState([]);
-  const [daily, setDaily] = useState([]);
-  const [weekly, setWeekly] = useState([]);
-  const [monthly, setMothly] = useState([]);
-  const [selectedDashboard, setSelectedDashboard] = useState('weekly');
+  const [selectedDashboard, setSelectedDashboard] = useState(timeFrames[1]);
 
   useEffect(() => {
     setInfo(jsonData.data);
   }, [info]);
 
-  const handleDaily = e => {
+  const handleTimes = e => {
     setSelectedDashboard(e.target.id);
-    setDaily(e.target.value);
-  };
-  const handleMonthly = e => {
-    setSelectedDashboard(e.target.id);
-    setMothly(e.target.value);
-  };
-  const handleWeekly = e => {
-    setSelectedDashboard(e.target.id);
-    setWeekly(e.target.value);
   };
 
   return (
@@ -47,44 +35,32 @@ const App = () => {
               </div>
             </div>
             <div className={classes.container__card__container__buttons}>
-              <button
-                id='daily'
-                className={
-                  selectedDashboard === 'daily'
-                    ? `${classes.container__card__container__buttons__active}`
-                    : `${classes.container__card__container__buttons__btn}`
-                }
-                onClick={handleDaily}
-              >
-                Daily
-              </button>
-              <button
-                id='weekly'
-                className={
-                  selectedDashboard === 'weekly'
-                    ? `${classes.container__card__container__buttons__active}`
-                    : `${classes.container__card__container__buttons__btn}`
-                }
-                onClick={handleWeekly}
-              >
-                Weekly
-              </button>
-              <button
-                id='monthly'
-                className={
-                  selectedDashboard === 'monthly'
-                    ? `${classes.container__card__container__buttons__active}`
-                    : `${classes.container__card__container__buttons__btn}`
-                }
-                onClick={handleMonthly}
-              >
-                Monthly
-              </button>
+              {timeFrames.map((time, index) => {
+                return (
+                  <button
+                    key={index}
+                    id={time}
+                    className={
+                      selectedDashboard === time
+                        ? `${classes.container__card__container__buttons__active}`
+                        : `${classes.container__card__container__buttons__btn}`
+                    }
+                    onClick={e => handleTimes(e)}
+                  >
+                    {time.charAt(0).toUpperCase() + time.substr(1)}
+                  </button>
+                );
+              })}
             </div>
           </div>
-          {selectedDashboard === 'weekly' && <Weekly info={info} weekly={weekly} />}
-          {selectedDashboard === 'daily' && <Daily info={info} daily={daily} />}
-          {selectedDashboard === 'monthly' && <Monthly info={info} monthly={monthly} />}
+
+          {timeFrames.map((t, i) => {
+            return (
+              selectedDashboard === timeFrames[i] && (
+                <CardContainer key={i} info={info} selectedDashboard={selectedDashboard} />
+              )
+            );
+          })}
         </div>
       </div>
     </div>
